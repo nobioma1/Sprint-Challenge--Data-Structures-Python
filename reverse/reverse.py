@@ -45,19 +45,32 @@ class LinkedList:
 
     def reverse_list(self):
         # 3 -> 2 -> 1 -> None reverse None <- 3 <- 2 <- 1
+
+        # Check if head or there is a next for the head to prevent entering the Loop
+        # return the initial head
+        if not self.head or not self.head.next_node:
+            return self.head
+
         # define variable to hold the node on the initial head
         current_node = self.head
+
         # define the variable previous to hold the current node
         previous_node = None
+
         # loop through the list if its not None
         while current_node:
+
             # define variable to hold the next node of the current_node
             next_node = current_node.next_node
+
             # set the current_node next_node to the previous_node
             current_node.next_node = previous_node
+
             # update the previous_node to the current_node
             previous_node = current_node
+
             # update the current_node to the next_node
             current_node = next_node
+
         # set the head to the current previous_node which would be the last node in the initial list
         self.head = previous_node
