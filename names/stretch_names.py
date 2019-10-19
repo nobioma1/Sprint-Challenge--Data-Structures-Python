@@ -7,7 +7,6 @@
 # include both and label the stretch solution with a comment)
 
 import time
-from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
